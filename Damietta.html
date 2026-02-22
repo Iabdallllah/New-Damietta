@@ -1,0 +1,1398 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>دمياط الجديدة — استثمر في المستقبل، عِش على البحر</title>
+<meta name="description" content="دمياط الجديدة: مدينة ساحلية متوسطية متكاملة أُسست عام 1980 — وجهة الاستثمار الصناعي والعقاري، عاصمة صناعة الأثاث في مصر، بوابة التجارة عبر ميناء دمياط، وبيئة حياة عصرية هادئة على البحر المتوسط.">
+<meta name="keywords" content="دمياط الجديدة استثمار، مدينة ساحلية مصر، عاصمة الأثاث مصر، ميناء دمياط تجارة، جامعة دمياط، عقارات دمياط الجديدة، البحر المتوسط مصر، مدينة مخططة مصر">
+<meta property="og:title" content="دمياط الجديدة — بوابة مصر المتوسطية للاستثمار والحياة">
+<meta property="og:description" content="اكتشف دمياط الجديدة: مدينة ذكية مُخططة تجمع الصناعة والتعليم والسكن والتجارة الدولية على ساحل البحر المتوسط. فرص استثمارية حقيقية في بيئة متطورة.">
+<meta property="og:type" content="website">
+<meta name="robots" content="index, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=IBM+Plex+Sans+Arabic:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --navy: #0a1628;
+    --deep-blue: #0d2b4e;
+    --ocean: #1a4a7a;
+    --sea: #2272b6;
+    --aqua: #4db8c8;
+    --gold: #c9a96e;
+    --warm-gold: #e8c88a;
+    --wood: #8b5e3c;
+    --cream: #f5f0e8;
+    --white: #ffffff;
+    --glass: rgba(255,255,255,0.08);
+    --glass-border: rgba(255,255,255,0.15);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Cairo', sans-serif;
+    background: var(--navy);
+    color: var(--cream);
+    overflow-x: hidden;
+    direction: rtl;
+  }
+
+  /* ===== NAV ===== */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    padding: 1.2rem 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: background 0.4s, backdrop-filter 0.4s;
+    direction: rtl;
+  }
+  nav.scrolled {
+    background: rgba(10,22,40,0.92);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--glass-border);
+  }
+  .nav-logo {
+    font-family: 'Cairo', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: var(--warm-gold);
+    letter-spacing: 0.02em;
+    text-decoration: none;
+  }
+  .nav-logo span { color: var(--aqua); }
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+    flex-direction: row-reverse;
+  }
+  .nav-links a {
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    transition: color 0.3s;
+  }
+  .nav-links a:hover { color: var(--warm-gold); }
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 4px;
+  }
+  .hamburger span {
+    width: 26px; height: 2px;
+    background: var(--cream);
+    transition: 0.3s;
+    display: block;
+  }
+
+  /* ===== HERO ===== */
+  #hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 30% 60%, rgba(34,114,182,0.4) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 20%, rgba(77,184,200,0.2) 0%, transparent 50%),
+      linear-gradient(160deg, #0a1628 0%, #0d2b4e 40%, #1a3a5c 70%, #0f2035 100%);
+    z-index: 0;
+  }
+  .hero-bg::before {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 40%;
+    background: linear-gradient(to top, rgba(13,43,78,0.9), transparent);
+    z-index: 1;
+  }
+
+
+
+  /* ===== PARTICLES ===== */
+  .particles {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+  }
+  .particle {
+    position: absolute;
+    border-radius: 50%;
+    background: var(--aqua);
+    opacity: 0.15;
+    animation: float-up linear infinite;
+  }
+  @keyframes float-up {
+    0%   { transform: translateY(100vh) scale(0); opacity: 0; }
+    10%  { opacity: 0.15; }
+    90%  { opacity: 0.05; }
+    100% { transform: translateY(-10vh) scale(1); opacity: 0; }
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 980px;
+    padding: 0 2rem;
+  }
+  .hero-badge {
+    display: inline-block;
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(10px);
+    padding: 0.5rem 1.8rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--aqua);
+    margin-bottom: 2rem;
+    animation: fadeInDown 1s ease both;
+    font-family: 'Cairo', sans-serif;
+  }
+  .hero-headline {
+    font-family: 'Cairo', sans-serif;
+    font-size: clamp(2.8rem, 7.5vw, 6rem);
+    font-weight: 900;
+    line-height: 1.18;
+    letter-spacing: -0.01em;
+    margin-bottom: 1.5rem;
+    animation: fadeInUp 1s 0.3s ease both;
+  }
+  .hero-headline .line-gold { color: var(--warm-gold); }
+  .hero-headline .line-aqua { color: var(--aqua); }
+  .hero-sub {
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
+    font-size: clamp(1.05rem, 2.5vw, 1.35rem);
+    font-weight: 300;
+    color: rgba(245,240,232,0.85);
+    line-height: 2;
+    max-width: 720px;
+    margin: 0 auto 2.5rem;
+    animation: fadeInUp 1s 0.5s ease both;
+  }
+  .hero-cta {
+    display: inline-flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    animation: fadeInUp 1s 0.7s ease both;
+  }
+  .btn-primary {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background: linear-gradient(135deg, var(--sea), var(--aqua));
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    font-family: 'Cairo', sans-serif;
+    border-radius: 4px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 0 30px rgba(77,184,200,0.3);
+  }
+  .btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 40px rgba(77,184,200,0.5);
+  }
+  .btn-outline {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    border: 1px solid var(--glass-border);
+    color: var(--cream);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    font-family: 'Cairo', sans-serif;
+    border-radius: 4px;
+    backdrop-filter: blur(10px);
+    background: var(--glass);
+    transition: all 0.3s;
+  }
+  .btn-outline:hover {
+    background: rgba(255,255,255,0.15);
+    border-color: var(--warm-gold);
+    color: var(--warm-gold);
+  }
+  .scroll-indicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    animation: fadeIn 2s 1.5s ease both;
+  }
+  .scroll-indicator span {
+    font-size: 0.75rem;
+    font-family: 'Cairo', sans-serif;
+    font-weight: 600;
+    color: rgba(255,255,255,0.4);
+  }
+  .scroll-line {
+    width: 1px;
+    height: 50px;
+    background: linear-gradient(to bottom, var(--aqua), transparent);
+    animation: scroll-pulse 2s ease infinite;
+  }
+  @keyframes scroll-pulse {
+    0%, 100% { opacity: 0.3; transform: scaleY(0.8); }
+    50%       { opacity: 1;   transform: scaleY(1); }
+  }
+
+  /* ===== SECTIONS BASE ===== */
+  section { position: relative; overflow: hidden; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+  .section-label {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    color: var(--aqua);
+    margin-bottom: 1rem;
+    font-family: 'Cairo', sans-serif;
+  }
+  .section-title {
+    font-family: 'Cairo', sans-serif;
+    font-size: clamp(2.2rem, 5vw, 3.8rem);
+    font-weight: 900;
+    line-height: 1.2;
+    color: var(--white);
+  }
+  .section-title .accent { color: var(--warm-gold); }
+  .section-intro {
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 300;
+    color: rgba(245,240,232,0.7);
+    line-height: 2;
+    max-width: 700px;
+  }
+
+  /* ===== ABOUT ===== */
+  #about {
+    padding: 8rem 0;
+    background: linear-gradient(180deg, var(--navy) 0%, #0d2240 100%);
+  }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+  .about-text .section-title { margin-bottom: 1.5rem; }
+  .about-text p {
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
+    color: rgba(245,240,232,0.75);
+    line-height: 2;
+    margin-bottom: 1.2rem;
+    font-size: 1rem;
+    font-weight: 400;
+  }
+  .about-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+  }
+  .stat-card {
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: border-color 0.3s;
+    text-align: right;
+  }
+  .stat-card:hover { border-color: var(--aqua); }
+  .stat-number {
+    font-family: 'Cairo', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: var(--warm-gold);
+    line-height: 1;
+  }
+  .stat-label {
+    font-family: 'Cairo', sans-serif;
+    font-size: 0.85rem;
+    color: rgba(245,240,232,0.6);
+    margin-top: 0.4rem;
+    font-weight: 600;
+  }
+  .about-images {
+    position: relative;
+    height: 550px;
+  }
+  .about-img {
+    position: absolute;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  }
+  .about-img img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+  }
+  .about-img:hover img { transform: scale(1.05); }
+  .about-img-1 { width: 65%; height: 380px; top: 0; left: 0; }
+  .about-img-2 { width: 55%; height: 260px; bottom: 0; right: 0; border: 3px solid var(--deep-blue); }
+  .img-badge {
+    position: absolute;
+    bottom: -1rem; left: -1rem;
+    background: linear-gradient(135deg, var(--sea), var(--aqua));
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    font-family: 'Cairo', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: white;
+    z-index: 3;
+    box-shadow: 0 10px 30px rgba(34,114,182,0.4);
+  }
+
+  /* ===== VIDEOS ===== */
+  #videos {
+    padding: 6rem 0 3rem 0;
+    background: linear-gradient(180deg, #0d2240 0%, #0a1628 100%);
+  }
+  .video-intro { text-align: center; margin-bottom: 4rem; }
+  .video-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 5rem;
+  }
+  .video-card {
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .video-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+  }
+  .video-card.featured { grid-column: 1 / -1; }
+  .video-embed {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+  }
+  .video-embed iframe {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    border: none;
+  }
+  .video-card-body { padding: 1.5rem; text-align: right; }
+  .video-card-title {
+    font-family: 'Cairo', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 0.5rem;
+  }
+  .video-card-desc {
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
+    font-size: 0.9rem;
+    color: rgba(245,240,232,0.6);
+    line-height: 1.9;
+    font-weight: 300;
+  }
+  .journalists-title {
+    font-family: 'Cairo', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: var(--white);
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+  .journalists-title span { color: var(--warm-gold); }
+
+  /* ===== ATTRACTIONS ===== */
+  #attractions {
+    padding: 3rem 0 8rem 0;
+    background: var(--navy);
+  }
+  .attract-intro { text-align: center; margin-bottom: 4rem; }
+  .attract-intro .section-intro { margin: 1.2rem auto 0; }
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+  .attr-card {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    height: 380px;
+    cursor: pointer;
+  }
+  .attr-card img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+  }
+  .attr-card:hover img { transform: scale(1.08); }
+  .attr-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(10,22,40,0.95) 0%, rgba(10,22,40,0.2) 60%, transparent 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 2rem;
+    transition: background 0.4s;
+    text-align: right;
+  }
+  .attr-card:hover .attr-overlay {
+    background: linear-gradient(to top, rgba(10,22,40,0.97) 0%, rgba(13,43,78,0.5) 70%, transparent 100%);
+  }
+  .attr-icon {
+    width: 44px; height: 44px;
+    background: linear-gradient(135deg, var(--sea), var(--aqua));
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    margin-right: auto;
+    margin-left: 0;
+    transform: translateY(10px);
+    opacity: 0;
+    transition: all 0.4s;
+  }
+  .attr-card:hover .attr-icon { transform: translateY(0); opacity: 1; }
+  .attr-name {
+    font-family: 'Cairo', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: var(--white);
+    margin-bottom: 0.5rem;
+  }
+  .attr-desc {
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
+    font-size: 0.9rem;
+    color: rgba(245,240,232,0.7);
+    line-height: 1.9;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+    font-weight: 300;
+  }
+  .attr-card:hover .attr-desc { max-height: 120px; }
+  .attr-card:nth-child(4), .attr-card:nth-child(5) { grid-column: span 1; }
+  .attr-card:first-child { grid-column: span 2; }
+
+  /* ===== TESTIMONIALS ===== */
+  #testimonials {
+    padding: 8rem 0;
+    background: linear-gradient(180deg, #0d2240, var(--navy));
+    position: relative;
+  }
+  #testimonials::before {
+    content: '"';
+    position: absolute;
+    top: 3rem; left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Cairo', sans-serif;
+    font-size: 20rem;
+    color: rgba(77,184,200,0.04);
+    line-height: 1;
+    pointer-events: none;
+    user-select: none;
+  }
+  .testi-intro { text-align: center; margin-bottom: 4rem; }
+  .testi-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+  .testi-card {
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(15px);
+    border-radius: 16px;
+    padding: 2rem;
+    position: relative;
+    transition: border-color 0.3s, transform 0.3s;
+    text-align: right;
+  }
+  .testi-card:hover {
+    border-color: var(--aqua);
+    transform: translateY(-5px);
+  }
+  .testi-card::before {
+    content: '"';
+    position: absolute;
+    top: 1.5rem; left: 2rem;
+    font-family: 'Cairo', sans-serif;
+    font-size: 4rem;
+    color: var(--aqua);
+    opacity: 0.3;
+    line-height: 1;
+  }
+  .testi-quote {
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    color: rgba(245,240,232,0.85);
+    line-height: 2;
+    margin-bottom: 1.5rem;
+  }
+  .testi-author {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-direction: row-reverse;
+  }
+  .testi-avatar {
+    width: 46px; height: 46px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--sea), var(--aqua));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cairo', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: white;
+    flex-shrink: 0;
+  }
+  .testi-info { text-align: right; }
+  .testi-name {
+    font-family: 'Cairo', sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--white);
+  }
+  .testi-role {
+    font-family: 'Cairo', sans-serif;
+    font-size: 0.78rem;
+    color: var(--aqua);
+    margin-top: 0.2rem;
+    font-weight: 600;
+  }
+  .testi-stars {
+    color: var(--warm-gold);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    direction: ltr;
+    text-align: right;
+  }
+
+  /* ===== GALLERY ===== */
+  #gallery {
+    padding: 8rem 0;
+    background: var(--navy);
+  }
+  .gallery-intro { text-align: center; margin-bottom: 3.5rem; }
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 200px 200px;
+    gap: 0.75rem;
+  }
+  .gallery-item {
+    overflow: hidden;
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer;
+  }
+  .gallery-item img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease, filter 0.5s ease;
+  }
+  .gallery-item:hover img {
+    transform: scale(1.1);
+    filter: brightness(0.7) saturate(1.3);
+  }
+  .gallery-item .overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(34,114,182,0.7), rgba(77,184,200,0.4));
+    opacity: 0;
+    transition: opacity 0.4s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .gallery-item:hover .overlay { opacity: 1; }
+  .overlay-icon { font-size: 2rem; color: white; }
+  .gallery-item:nth-child(1) { grid-column: span 2; }
+  .gallery-item:nth-child(4) { grid-column: span 2; }
+
+  /* ===== CTA ===== */
+  #cta {
+    padding: 8rem 2rem;
+    background: linear-gradient(135deg, #0d2b4e 0%, #1a4a7a 50%, #0d2b4e 100%);
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+  }
+  #cta::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 20% 50%, rgba(77,184,200,0.15) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 50%, rgba(201,169,110,0.1) 0%, transparent 50%);
+  }
+  .cta-content { position: relative; z-index: 1; max-width: 850px; margin: 0 auto; }
+  .cta-title {
+    font-family: 'Cairo', sans-serif;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 900;
+    color: var(--white);
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+  }
+  .cta-title span { color: var(--warm-gold); }
+  .cta-sub {
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: rgba(245,240,232,0.8);
+    margin-bottom: 3rem;
+    line-height: 2;
+  }
+  .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+  .cta-dividers {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 4rem;
+    flex-wrap: wrap;
+  }
+  .cta-divider-item { text-align: center; }
+  .cta-divider-num {
+    font-family: 'Cairo', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: var(--aqua);
+  }
+  .cta-divider-label {
+    font-family: 'Cairo', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: rgba(245,240,232,0.5);
+    margin-top: 0.3rem;
+  }
+  .cta-divider-sep { width: 1px; height: 50px; background: var(--glass-border); }
+
+  /* ===== FOOTER ===== */
+  footer {
+    background: #060e1a;
+    padding: 4rem 0 2rem;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1.2fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+    direction: rtl;
+  }
+  .footer-brand .nav-logo { font-size: 1.8rem; display: block; margin-bottom: 1rem; }
+  .footer-brand p {
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 300;
+    color: rgba(245,240,232,0.5);
+    line-height: 2;
+    margin-bottom: 1.5rem;
+  }
+  .social-links { display: flex; gap: 0.75rem; }
+  .social-link {
+    width: 38px; height: 38px;
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    color: rgba(245,240,232,0.6);
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+  .social-link:hover {
+    background: linear-gradient(135deg, var(--sea), var(--aqua));
+    border-color: transparent;
+    color: white;
+    transform: translateY(-2px);
+  }
+  .footer-col h4 {
+    font-family: 'Cairo', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--glass-border);
+    text-align: right;
+  }
+  .footer-col ul { list-style: none; text-align: right; }
+  .footer-col ul li { margin-bottom: 0.7rem; }
+  .footer-col ul li a {
+    font-family: 'Cairo', sans-serif;
+    color: rgba(245,240,232,0.5);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: color 0.3s;
+  }
+  .footer-col ul li a:hover { color: var(--aqua); }
+  .contact-item {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 0.9rem;
+    align-items: flex-start;
+    flex-direction: row-reverse;
+    text-align: right;
+  }
+  .contact-item .icon { color: var(--aqua); font-size: 0.9rem; flex-shrink: 0; margin-top: 0.1rem; }
+  .contact-item span {
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
+    font-size: 0.88rem;
+    color: rgba(245,240,232,0.5);
+    line-height: 1.7;
+    font-weight: 300;
+  }
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.05);
+    padding-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    direction: rtl;
+  }
+  .footer-bottom p {
+    font-family: 'Cairo', sans-serif;
+    font-size: 0.83rem;
+    color: rgba(245,240,232,0.3);
+    font-weight: 400;
+  }
+  .footer-bottom a { color: var(--aqua); text-decoration: none; }
+
+  /* ===== ANIMATIONS ===== */
+  @keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease, transform 0.8s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-left { opacity: 0; transform: translateX(40px); transition: opacity 0.8s ease, transform 0.8s ease; }
+  .reveal-left.visible { opacity: 1; transform: translateX(0); }
+  .reveal-right { opacity: 0; transform: translateX(-40px); transition: opacity 0.8s ease, transform 0.8s ease; }
+  .reveal-right.visible { opacity: 1; transform: translateX(0); }
+
+  /* ===== MOBILE MENU ===== */
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(10,22,40,0.98);
+    backdrop-filter: blur(20px);
+    z-index: 999;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+  }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a {
+    font-family: 'Cairo', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: var(--white);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  .mobile-menu a:hover { color: var(--warm-gold); }
+  .mobile-close {
+    position: absolute;
+    top: 1.5rem; left: 2rem;
+    background: none;
+    border: none;
+    color: var(--cream);
+    font-size: 2rem;
+    cursor: pointer;
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 1024px) {
+    .cards-grid { grid-template-columns: repeat(2, 1fr); }
+    .attr-card:first-child { grid-column: span 2; }
+    .testi-grid { grid-template-columns: repeat(2, 1fr); }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+    .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .about-images { height: 350px; }
+    .about-img-1 { width: 70%; }
+    .about-img-2 { width: 60%; }
+    .video-grid { grid-template-columns: 1fr; }
+    .video-card.featured { grid-column: 1; }
+    .cards-grid { grid-template-columns: 1fr; }
+    .attr-card:first-child { grid-column: span 1; }
+    .testi-grid { grid-template-columns: 1fr; }
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(4, 160px); }
+    .gallery-item:nth-child(1), .gallery-item:nth-child(4) { grid-column: span 1; }
+    .footer-grid { grid-template-columns: 1fr; }
+    .about-stats { grid-template-columns: 1fr 1fr; }
+    .cta-divider-sep { display: none; }
+    .cta-dividers { gap: 2rem; }
+  }
+  @media (max-width: 480px) {
+    .hero-headline { font-size: 2.6rem; }
+    .cta-title { font-size: 2rem; }
+    .section-title { font-size: 2rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#hero" class="nav-logo">دمياط الجديدة<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">رؤية المدينة</a></li>
+    <li><a href="#videos">فيديوهات</a></li>
+    <li><a href="#attractions">محاور التميز</a></li>
+    <li><a href="#gallery">معرض الصور</a></li>
+    <li><a href="#cta">استثمر معنا</a></li>
+  </ul>
+  <button class="hamburger" onclick="openMenu()" aria-label="القائمة">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" onclick="closeMenu()">✕</button>
+  <a href="#about" onclick="closeMenu()">رؤية المدينة</a>
+  <a href="#videos" onclick="closeMenu()">فيديوهات</a>
+  <a href="#attractions" onclick="closeMenu()">محاور التميز</a>
+  <a href="#gallery" onclick="closeMenu()">معرض الصور</a>
+  <a href="#cta" onclick="closeMenu()">استثمر معنا</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="particles" id="particles"></div>
+
+  <!-- SEAMLESS SVG WAVE -->
+  <div class="wave-container">
+    <svg class="wave-svg" viewBox="0 0 2880 130" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,65 C240,130 480,0 720,65 C960,130 1200,0 1440,65 C1680,130 1920,0 2160,65 C2400,130 2640,0 2880,65 L2880,130 L0,130 Z" fill="#0a1628" fill-opacity="0.85"/>
+    </svg>
+    <svg class="wave-svg" viewBox="0 0 2880 130" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,85 C240,20 480,130 720,85 C960,20 1200,130 1440,85 C1680,20 1920,130 2160,85 C2400,20 2640,130 2880,85 L2880,130 L0,130 Z" fill="#0d2b4e" fill-opacity="0.6"/>
+    </svg>
+  </div>
+
+  <div class="hero-content">
+    <div class="hero-badge">🏙️ مدينة ذكية مُخططة منذ 1980 — على البحر المتوسط</div>
+    <h1 class="hero-headline">
+      <span class="line-gold">استثمر في المستقبل.</span><br>
+      <span class="line-aqua">عِش على البحر.</span>
+    </h1>
+    <p class="hero-sub">
+      دمياط الجديدة — بوابة مصر المتوسطية للصناعة والتجارة والحياة الراقية.
+      مدينة مُخططة بعناية تجمع قوة الميناء، وعمق التعليم، وهدوء الشاطئ في منظومة متكاملة تفتح أمامك أفقاً لا محدوداً من الفرص.
+    </p>
+    <div class="hero-cta">
+      <a href="#cta" class="btn-primary">اكتشف فرص الاستثمار</a>
+      <a href="#about" class="btn-outline">رؤية المدينة</a>
+    </div>
+  </div>
+
+  <div class="scroll-indicator">
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-text reveal-left">
+        <span class="section-label">هويتنا وانطلاقتنا</span>
+        <h2 class="section-title">مدينة بُنيت <span class="accent">بالرؤية،</span><br>وتنمو بالفرصة</h2>
+        <p>أُسست دمياط الجديدة عام 1980 كمدينة مُخططة من الجيل الأول على ساحل البحر المتوسط، وهي اليوم نموذج حي للتطوير العمراني المتوازن. شبكة طرق منظمة، أحياء سكنية هادئة، ومساحات خضراء تجعل منها بيئة استثنائية للعيش والعمل معاً.</p>
+        <p>تمتلك المدينة <strong style="color:var(--warm-gold)">موقعاً استراتيجياً استثنائياً</strong> على مدخل دلتا النيل إلى البحر المتوسط، مما يجعلها محوراً للتجارة الدولية عبر ميناء دمياط، أحد أكبر وأكثر موانئ مصر حركةً وأهمية. هذا التموضع الجغرافي الفريد هو أساس كل فرصة.</p>
+        <p>من أكاديميي جامعة دمياط إلى حرفيي صناعة الأثاث العالمية، يقطن المدينة مجتمع من البناة والمبدعين والطموحين — وهذا هو أعظم ما تملكه دمياط الجديدة: إنسانها المُنتج ورأسمالها البشري الثري.</p>
+        <div class="about-stats">
+          <div class="stat-card">
+            <div class="stat-number">1980</div>
+            <div class="stat-label">تأسيس المدينة المخططة</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">+7,000</div>
+            <div class="stat-label">منشأة صناعية وحرفية</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">+60</div>
+            <div class="stat-label">دولة وجهة للصادرات</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">بحري</div>
+            <div class="stat-label">موقع على المتوسط</div>
+          </div>
+        </div>
+      </div>
+      <div class="about-images reveal-right">
+        <div class="about-img about-img-1">
+          <img src="https://www.mobtada.com/uploads/images/2024/01/17050431876.jpg" alt="دمياط الجديدة — المدينة الساحلية المخططة" loading="lazy">
+        </div>
+        <div class="about-img about-img-2">
+          <img src="https://nasseryouthmovement.net/uploads/images/2022/09/image_750x_63232598c53e2.jpg" alt="الموقع الاستراتيجي لدمياط الجديدة" loading="lazy">
+          <div class="img-badge">🌊 بوابة مصر على المتوسط</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEOS -->
+<section id="videos">
+  <div class="container">
+    <div class="video-intro reveal">
+      <span class="section-label">دمياط الجديدة في الإعلام</span>
+      <h2 class="section-title">القصة التي <span class="accent">يرويها الآخرون</span></h2>
+      <p class="section-intro" style="margin: 1rem auto 0;">حين يتحدث المستثمرون والصحفيون والخبراء عن دمياط الجديدة، يتحدثون عن مدينة تتحول من قصة نجاح صناعية إلى وجهة استثمار متكاملة على الخريطة المتوسطية.</p>
+    </div>
+    <div class="video-grid">
+      <div class="video-card featured reveal">
+        <div class="video-embed">
+          <iframe
+            src="https://www.youtube.com/embed/OOQZJprKAHo"
+            title="دمياط الجديدة: مدينة المستقبل على البحر المتوسط"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen loading="lazy">
+          </iframe>
+        </div>
+        <div class="video-card-body">
+          <div class="video-card-title">🎬 دمياط الجديدة: مدينة المستقبل على البحر المتوسط</div>
+          <div class="video-card-desc">جولة ميدانية في مدينة دمياط الجديدة — من الأحياء السكنية المنظمة وشواطئ البحر المتوسط الهادئة، إلى ورش الأثاث العالمية وأرصفة ميناء دمياط التجاري الكبير. شاهد كيف تتشكل مدينة المستقبل.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="journalists-title reveal">🎙️ خبراء يتحدثون عن <span>دمياط الجديدة</span></div>
+
+    <div class="video-grid">
+      <div class="video-card reveal">
+        <div class="video-embed">
+          <iframe
+            src="https://www.youtube.com/embed/OOQZJprKAHo"
+            title="تقرير: فرص الاستثمار في دمياط الجديدة"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen loading="lazy">
+          </iframe>
+        </div>
+        <div class="video-card-body">
+          <div class="video-card-title">📊 خبراء الاقتصاد: لماذا الآن في دمياط الجديدة؟</div>
+          <div class="video-card-desc">محللون اقتصاديون يرصدون مؤشرات النمو، ومقارنة دمياط الجديدة بالمدن الساحلية الناشئة في المنطقة، وسبب كونها الفرصة الأبرز في مرحلة التحول الاقتصادي المصري.</div>
+        </div>
+      </div>
+      <div class="video-card reveal">
+        <div class="video-embed">
+          <iframe
+            src="https://www.youtube.com/embed/OOQZJprKAHo"
+            title="صناعة الأثاث في دمياط: قوة تصديرية عالمية"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen loading="lazy">
+          </iframe>
+        </div>
+        <div class="video-card-body">
+          <div class="video-card-title">🪑 عاصمة الأثاث: صناعة تُصدّر للعالم من دمياط الجديدة</div>
+          <div class="video-card-desc">تحقيق معمق في قطاع الأثاث والخشب بدمياط الجديدة، الذي يُصدّر إلى أكثر من 60 دولة ويمثل ركيزة صناعية استثنائية تجذب الاستثمارات من الخليج وأوروبا.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ATTRACTIONS -->
+<section id="attractions">
+  <div class="container">
+    <div class="attract-intro reveal">
+      <span class="section-label">محاور القوة والتميز</span>
+      <h2 class="section-title">خمسة محاور <span class="accent">تصنع المدينة</span></h2>
+      <p class="section-intro">دمياط الجديدة ليست مجرد موقع — إنها منظومة متكاملة من الفرص الحقيقية لكل من يبحث عن النمو والاستقرار.</p>
+    </div>
+    <div class="cards-grid">
+
+      <div class="attr-card reveal">
+        <img src="https://zen.wego.com/cdn-cgi/image/format=auto,quality=75,width=2560/web/cms/destinations/city/eg/herodir/en/Ras%20el%20bar%20egypt_355256700.jpg" alt="شاطئ دمياط الجديدة — بيئة حياة راقية" loading="lazy">
+        <div class="attr-overlay">
+          <div class="attr-icon">🏖️</div>
+          <div class="attr-name">بيئة حياة راقية</div>
+          <div class="attr-desc">شواطئ هادئة ونظيفة على البحر المتوسط، وأحياء سكنية منظمة تمنح العائلات والمقيمين أعلى معايير الأمان والراحة. دمياط الجديدة تُقدم جودة حياة لا تجدها في المدن المزدحمة.</div>
+        </div>
+      </div>
+
+      <div class="attr-card reveal">
+        <img src="https://www.mts.gov.eg/wp-content/uploads/2022/06/1-3.jpg" alt="ميناء دمياط — بوابة التجارة الدولية" loading="lazy">
+        <div class="attr-overlay">
+          <div class="attr-icon">⚓</div>
+          <div class="attr-name">ميناء دمياط التجاري</div>
+          <div class="attr-desc">أحد أكبر وأكثر موانئ مصر نشاطاً على البحر المتوسط، يمثل بوابة التجارة الدولية التي تمنح المستثمرين في دمياط الجديدة وصولاً مباشراً إلى الأسواق الأوروبية والعالمية.</div>
+        </div>
+      </div>
+
+      <div class="attr-card reveal">
+        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&q=80" alt="صناعة الأثاث — القوة الصناعية لدمياط الجديدة" loading="lazy">
+        <div class="attr-overlay">
+          <div class="attr-icon">🪑</div>
+          <div class="attr-name">عاصمة صناعة الأثاث</div>
+          <div class="attr-desc">أكثر من 7,000 منشأة صناعية وحرفية في صناعة الأثاث والخشب، تُصدّر إلى أكثر من 60 دولة. هذا القطاع العملاق يُوفر بيئة استثمار صناعية ناضجة لا مثيل لها في المنطقة.</div>
+        </div>
+      </div>
+
+      <div class="attr-card reveal">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/25/%D8%B7%D8%B1%D9%8A%D9%82_%D8%A5%D9%84%D9%89_%D9%85%D8%A8%D9%86%D9%89_%D9%85%D8%AD%D8%A7%D9%81%D8%B8%D8%A9_%D8%AF%D9%85%D9%8A%D8%A7%D8%B7.JPG" alt="جامعة دمياط — المحور التعليمي" loading="lazy">
+        <div class="attr-overlay">
+          <div class="attr-icon">🎓</div>
+          <div class="attr-name">جامعة دمياط</div>
+          <div class="attr-desc">جامعة دمياط تُشكّل عقل المدينة ومحركها البشري — تُخرّج آلاف الكفاءات سنوياً في التخصصات الهندسية والتجارية والعلمية، وتوفر للمستثمرين حاضنة من الكوادر الشابة المؤهلة.</div>
+        </div>
+      </div>
+
+      <div class="attr-card reveal">
+        <img src="https://cairoscene.com/Content/Admin/Uploads/Articles/ArticlesMainPhoto/1128927/2c3e7a05-5551-4a0b-94a0-eddde357d1f0.jpg" alt="الإمكانات العقارية في دمياط الجديدة" loading="lazy">
+        <div class="attr-overlay">
+          <div class="attr-icon">🏗️</div>
+          <div class="attr-name">نمو عقاري واعد</div>
+          <div class="attr-desc">مخططات عمرانية منظمة وأراضٍ متاحة بأسعار تنافسية مقارنةً بالمدن الساحلية. مع تنامي الطلب السكني والصناعي، يمثل القطاع العقاري في دمياط الجديدة فرصة استثمارية بعيدة المدى.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="container">
+    <div class="testi-intro reveal">
+      <span class="section-label">أصوات المستثمرين والخبراء</span>
+      <h2 class="section-title">ماذا يقول <span class="accent">أصحاب القرار</span></h2>
+    </div>
+    <div class="testi-grid">
+
+      <div class="testi-card reveal">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">دمياط الجديدة تملك ما تبحث عنه كل وجهة استثمارية ناجحة: موقع استراتيجي، بنية تحتية جاهزة، قاعدة صناعية ناضجة، وكوادر بشرية مؤهلة. الفرصة حقيقية وتوقيتها مثالي.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">ل</div>
+          <div class="testi-info">
+            <div class="testi-name">ليلى حسان</div>
+            <div class="testi-role">محللة استثمار أولى، مجموعة الأهرام للأعمال</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card reveal">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">أقمت مصنعاً للأثاث في دمياط الجديدة قبل ثلاث سنوات. اليوم نُصدّر إلى ثماني دول خليجية وأوروبية. القرار كان الأذكى في مسيرتي التجارية — البنية اللوجستية والميناء القريب غيّرا المعادلة كلياً.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">ك</div>
+          <div class="testi-info">
+            <div class="testi-name">كريم منصور</div>
+            <div class="testi-role">مستثمر صناعي، رئيس مجلس إدارة شركة الأثاث الذهبي</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card reveal">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">اخترت دمياط الجديدة لتكون بيت عائلتي لأنها تقدم ما لا تقدمه المدن الكبرى: هدوء البحر، وأمان الحي المخطط، وفرص العمل الحقيقية، وتعليم جامعي على مستوى عالٍ. الحياة هنا متوازنة ومكتملة.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">س</div>
+          <div class="testi-info">
+            <div class="testi-name">سارة الفاروق</div>
+            <div class="testi-role">مستشارة تطوير عقاري، ومقيمة في دمياط الجديدة</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card reveal">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">في بحثنا عن مواقع لتوسعة أعمالنا اللوجستية في مصر، كانت دمياط الجديدة الخيار الأوضح. القرب من ميناء دمياط يُقلص تكاليف الشحن بنسبة تصل إلى 40%، وهذا وحده يجعل العائد على الاستثمار استثنائياً.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">م</div>
+          <div class="testi-info">
+            <div class="testi-name">محمد السيد</div>
+            <div class="testi-role">الرئيس التنفيذي، مجموعة دلتا للخدمات اللوجستية</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card reveal">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">درسنا في جامعة دمياط وأسّسنا شركتنا الناشئة هنا بعد التخرج مباشرة. البيئة الحاضنة، وتوافر الكفاءات، وانخفاض تكلفة التشغيل مقارنة بالقاهرة جعل دمياط الجديدة الخيار الأمثل لريادة الأعمال.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">ن</div>
+          <div class="testi-info">
+            <div class="testi-name">نادية فاروق</div>
+            <div class="testi-role">مؤسسة شركة ناشئة في التقنية والتصميم</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card reveal">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">حين تمشي في شوارع دمياط الجديدة ترى ما لا تراه في كثير من المدن المصرية: نظام، هدوء، خضرة، وناس تعمل بجد. هذه المدينة لا تتحدث عن التطوير — إنها تعيشه فعلاً كل يوم.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">ط</div>
+          <div class="testi-info">
+            <div class="testi-name">طارق إبراهيم</div>
+            <div class="testi-role">صحفي اقتصادي ومحلل شؤون التنمية الحضرية</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="container">
+    <div class="gallery-intro reveal">
+      <span class="section-label">صور من الواقع</span>
+      <h2 class="section-title">دمياط الجديدة <span class="accent">بالصورة</span></h2>
+      <p class="section-intro" style="margin: 1rem auto 0;">من الميناء إلى الشاطئ، ومن ورشة الأثاث إلى حرم الجامعة — دمياط الجديدة مدينة حية يصنعها أهلها كل يوم.</p>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item reveal">
+        <img src="https://images.pexels.com/photos/33941717/pexels-photo-33941717.jpeg?auto=compress&cs=tinysrgb&w=600&h=400" alt="شاطئ البحر المتوسط في دمياط الجديدة" loading="lazy" decoding="async">
+        <div class="overlay"><span class="overlay-icon">🔍</span></div>
+      </div>
+      <div class="gallery-item reveal">
+        <img src="https://images.pexels.com/photos/3840441/pexels-photo-3840441.jpeg?auto=compress&cs=tinysrgb&w=600&h=400" alt="الموقع الجغرافي — دلتا النيل والمتوسط" loading="lazy" decoding="async">
+        <div class="overlay"><span class="overlay-icon">🔍</span></div>
+      </div>
+      <div class="gallery-item reveal">
+        <img src="https://images.dailynewsegypt.com/2018/09/furniture.jpg" alt="صناعة الأثاث — القوة الصناعية لدمياط الجديدة" loading="lazy" decoding="async">
+        <div class="overlay"><span class="overlay-icon">🔍</span></div>
+      </div>
+      <div class="gallery-item reveal">
+        <img src="https://images.pexels.com/photos/34712863/pexels-photo-34712863.jpeg?auto=compress&cs=tinysrgb&w=600&h=400" alt="ثروة البحر — المأكولات البحرية الطازجة" loading="lazy" decoding="async">
+        <div class="overlay"><span class="overlay-icon">🔍</span></div>
+      </div>
+      <div class="gallery-item reveal">
+        <img src="https://live.staticflickr.com/2722/4339403180_88e0940b42_z.jpg" alt="الطبيعة والهدوء على ضفاف النيل" loading="lazy" decoding="async">
+        <div class="overlay"><span class="overlay-icon">🔍</span></div>
+      </div>
+      <div class="gallery-item reveal">
+        <img src="https://live.staticflickr.com/4048/4338702349_99e5061dcc_b.jpg" alt="التقاء النيل بالبحر المتوسط" loading="lazy" decoding="async">
+        <div class="overlay"><span class="overlay-icon">🔍</span></div>
+      </div>
+      <div class="gallery-item reveal">
+        <img src="https://images.pexels.com/photos/18606632/pexels-photo-18606632.jpeg?_gl=1*1p7jtv*_ga*MTk1MzM1NDc1OC4xNzY0MTU2Njk3*_ga_8JE65Q40S6*czE3NzE2ODYwMzUkbzMkZzEkdDE3NzE2ODcxODIkajI1JGwwJGgw" alt="التخطيط العمراني المنظم لدمياط الجديدة" loading="lazy" decoding="async">
+        <div class="overlay"><span class="overlay-icon">🔍</span></div>
+      </div>
+      <div class="gallery-item reveal">
+        <img src="https://preview.redd.it/czzzpcoqxma71.jpg?width=600&format=pjpg&auto=webp&s=59d099df0a5773a4803e9c12dd589a510fd33f00" alt="ميناء دمياط — بوابة التجارة الدولية" loading="lazy" decoding="async">
+        <div class="overlay"><span class="overlay-icon">🔍</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="cta">
+  <div class="cta-content reveal">
+    <span class="section-label">الفرصة أمامك الآن</span>
+    <h2 class="cta-title">دمياط الجديدة —<br><span>الشريك الاستراتيجي لطموحك</span></h2>
+    <p class="cta-sub">
+      سواء كنت مستثمراً صناعياً يبحث عن موقع لوجستي متميز، أو رجل أعمال يرى في ساحل المتوسط سوقاً واعدة، أو عائلة تستحق حياة راقية هادئة — دمياط الجديدة تملك إجابة لكل طموح.
+    </p>
+    <div class="cta-buttons">
+      <a href="https://www.dpa.gov.eg" class="btn-primary" target="_blank" rel="noopener noreferrer">ابدأ رحلة الاستثمار</a>
+      <a href="https://www.booking.com/city/eg/dumyat.html" class="btn-outline" target="_blank" rel="noopener noreferrer">خطّط لزيارتك</a>
+    </div>
+    <div class="cta-dividers">
+      <div class="cta-divider-item">
+        <div class="cta-divider-num">1980</div>
+        <div class="cta-divider-label">تأسيس المدينة المخططة</div>
+      </div>
+      <div class="cta-divider-sep"></div>
+      <div class="cta-divider-item">
+        <div class="cta-divider-num">+7,000</div>
+        <div class="cta-divider-label">منشأة صناعية وحرفية</div>
+      </div>
+      <div class="cta-divider-sep"></div>
+      <div class="cta-divider-item">
+        <div class="cta-divider-num">+60</div>
+        <div class="cta-divider-label">دولة وجهة للصادرات</div>
+      </div>
+      <div class="cta-divider-sep"></div>
+      <div class="cta-divider-item">
+        <div class="cta-divider-num">#1</div>
+        <div class="cta-divider-label">عاصمة الأثاث في مصر</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#hero" class="nav-logo">دمياط الجديدة<span>.</span></a>
+        <p>مدينة مُخططة على البحر المتوسط — تجمع قوة الميناء التجاري، وعمق الجامعة، وحرارة صناعة الأثاث، وهدوء الشاطئ في منظومة واحدة متكاملة. بوابة مصر للفرصة المتوسطية.</p>
+        <div class="social-links">
+          <a href="#" class="social-link" aria-label="فيسبوك">f</a>
+          <a href="#" class="social-link" aria-label="إنستغرام">📷</a>
+          <a href="#" class="social-link" aria-label="يوتيوب">▶</a>
+          <a href="#" class="social-link" aria-label="تويتر">𝕏</a>
+          <a href="#" class="social-link" aria-label="لينكدإن">in</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>تواصل معنا</h4>
+        <div class="contact-item">
+          <span class="icon">📍</span>
+          <span>دمياط الجديدة، محافظة دمياط، مصر</span>
+        </div>
+        <div class="contact-item">
+          <span class="icon">📞</span>
+          <span>057 — هيئة الاستثمار بدمياط</span>
+        </div>
+        <div class="contact-item">
+          <span class="icon">✉️</span>
+          <span>invest@newdamietta.gov.eg</span>
+        </div>
+        <div class="contact-item">
+          <span class="icon">🌐</span>
+          <span>newdamietta.gov.eg</span>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>استكشف</h4>
+        <ul>
+          <li><a href="#about">رؤية المدينة</a></li>
+          <li><a href="#attractions">محاور التميز</a></li>
+          <li><a href="#gallery">معرض الصور</a></li>
+          <li><a href="#videos">فيديوهات الاستثمار</a></li>
+          <li><a href="#testimonials">قصص النجاح</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 هيئة الاستثمار والتنمية — دمياط الجديدة. جميع الحقوق محفوظة.</p>
+      <p>صُنع بـ ❤️ لأجل <a href="#hero">دمياط الجديدة</a> — عاصمة مصر المتوسطية الناشئة</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Navbar scroll effect
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 50);
+  });
+
+  // Mobile menu
+  function openMenu()  { document.getElementById('mobileMenu').classList.add('open'); }
+  function closeMenu() { document.getElementById('mobileMenu').classList.remove('open'); }
+
+  // Particles
+  const particleContainer = document.getElementById('particles');
+  for (let i = 0; i < 20; i++) {
+    const p = document.createElement('div');
+    p.className = 'particle';
+    const size = Math.random() * 6 + 2;
+    p.style.cssText = `
+      width:${size}px;
+      height:${size}px;
+      left:${Math.random() * 100}%;
+      animation-duration:${Math.random() * 15 + 10}s;
+      animation-delay:${Math.random() * 10}s;
+    `;
+    particleContainer.appendChild(p);
+  }
+
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+  document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => observer.observe(el));
+
+  // Stagger grid children
+  document.querySelectorAll('.cards-grid, .testi-grid, .video-grid, .gallery-grid, .about-stats').forEach(grid => {
+    grid.querySelectorAll('.attr-card, .testi-card, .video-card, .gallery-item, .stat-card').forEach((child, i) => {
+      child.style.transitionDelay = `${i * 0.12}s`;
+    });
+  });
+
+  // Counter pop-in animation
+  const statsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        document.querySelectorAll('.stat-number, .cta-divider-num').forEach(el => {
+          el.style.transform = 'scale(0.8)';
+          el.style.transition = 'transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1)';
+          setTimeout(() => { el.style.transform = 'scale(1)'; }, 100);
+        });
+        statsObserver.disconnect();
+      }
+    });
+  }, { threshold: 0.5 });
+
+  const statsSection = document.querySelector('#about');
+  if (statsSection) statsObserver.observe(statsSection);
+</script>
+</body>
+</html>
