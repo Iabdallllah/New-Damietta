@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>دمياط الجديدة — استثمر في المستقبل، عِش على البحر</title>
+<title>دمياط الجديدة — استثمر في المستقبل، عيش على البحر</title>
 <meta name="description" content="دمياط الجديدة: مدينة ساحلية متوسطية متكاملة أُسست عام 1980 — وجهة الاستثمار الصناعي والعقاري، عاصمة صناعة الأثاث في مصر، بوابة التجارة عبر ميناء دمياط، وبيئة حياة عصرية هادئة على البحر المتوسط.">
 <meta name="keywords" content="دمياط الجديدة استثمار، مدينة ساحلية مصر، عاصمة الأثاث مصر، ميناء دمياط تجارة، جامعة دمياط، عقارات دمياط الجديدة، البحر المتوسط مصر، مدينة مخططة مصر">
 <meta property="og:title" content="دمياط الجديدة — بوابة مصر المتوسطية للاستثمار والحياة">
@@ -126,7 +126,31 @@
     z-index: 1;
   }
 
-
+  /* ===== SEAMLESS WAVE ===== */
+  .wave-container {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 130px;
+    z-index: 1;
+    overflow: hidden;
+  }
+  .wave-svg {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 200%;
+    height: 100%;
+    animation: waveMove 9s linear infinite;
+  }
+  .wave-svg:nth-child(2) {
+    animation-duration: 12s;
+    animation-direction: reverse;
+    opacity: 0.5;
+  }
+  @keyframes waveMove {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
 
   /* ===== PARTICLES ===== */
   .particles {
@@ -291,6 +315,436 @@
     line-height: 2;
     max-width: 700px;
   }
+
+  /* ============================================================
+     ✨ PROMOTIONAL AD SECTION
+  ============================================================ */
+  #promo-ad {
+    position: relative;
+    padding: 0;
+    overflow: hidden;
+    min-height: 680px;
+    display: flex;
+    align-items: center;
+  }
+
+  /* Full-bleed beach background with layered overlays */
+  .promo-bg {
+    position: absolute;
+    inset: 0;
+    /* Guaranteed gradient fallback — rich Mediterranean blue */
+    background:
+      linear-gradient(160deg, #061626 0%, #0a2540 30%, #0e3d6e 60%, #0a2540 100%);
+    z-index: 0;
+  }
+  /* Beach photo layered on top of gradient */
+  .promo-bg-img {
+    position: absolute;
+    inset: 0;
+    background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1920&q=80&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center 55%;
+    background-attachment: scroll;
+    z-index: 1;
+    opacity: 0.45;
+  }
+  .promo-bg::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      135deg,
+      rgba(6, 14, 26, 0.82) 0%,
+      rgba(8, 20, 40, 0.65) 45%,
+      rgba(13, 43, 78, 0.78) 100%
+    );
+    z-index: 2;
+  }
+  /* Decorative top & bottom gradient fades for seamless blending */
+  .promo-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(to bottom, var(--navy) 0%, transparent 15%, transparent 85%, var(--navy) 100%);
+    z-index: 3;
+  }
+
+  /* Animated shimmer lines for luxury feel */
+  .promo-shimmer {
+    position: absolute;
+    inset: 0;
+    z-index: 4;
+    pointer-events: none;
+    overflow: hidden;
+  }
+  .promo-shimmer::before,
+  .promo-shimmer::after {
+    content: '';
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent, rgba(77,184,200,0.25), transparent);
+    animation: shimmerLine 4s ease-in-out infinite;
+  }
+  .promo-shimmer::before { right: 18%; animation-delay: 0s; }
+  .promo-shimmer::after  { right: 72%; animation-delay: 2s; opacity: 0.5; }
+  @keyframes shimmerLine {
+    0%, 100% { opacity: 0; transform: translateY(-100%); }
+    50%       { opacity: 1; transform: translateY(100%); }
+  }
+
+  .promo-inner {
+    position: relative;
+    z-index: 5;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 6rem 2rem;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  /* ---- LEFT CONTENT PANEL ---- */
+  .promo-content {}
+
+  .promo-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(77,184,200,0.12);
+    border: 1px solid rgba(77,184,200,0.35);
+    backdrop-filter: blur(12px);
+    padding: 0.4rem 1.2rem;
+    border-radius: 50px;
+    font-family: 'Cairo', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--aqua);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 1.8rem;
+  }
+  .promo-tag-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--aqua);
+    animation: dotPulse 1.5s ease-in-out infinite;
+  }
+  @keyframes dotPulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50%       { opacity: 0.4; transform: scale(0.6); }
+  }
+
+  .promo-headline {
+    font-family: 'Cairo', sans-serif;
+    font-size: clamp(2rem, 4.5vw, 3.4rem);
+    font-weight: 900;
+    line-height: 1.35;
+    color: var(--white);
+    margin-bottom: 1rem;
+  }
+  .promo-headline em {
+    font-style: normal;
+    color: var(--warm-gold);
+    position: relative;
+  }
+  /* Gold underline accent */
+  .promo-headline em::after {
+    content: '';
+    position: absolute;
+    bottom: -2px; right: 0; left: 0;
+    height: 2px;
+    background: linear-gradient(to left, var(--warm-gold), transparent);
+    border-radius: 2px;
+  }
+
+  .promo-sub {
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: rgba(245,240,232,0.75);
+    line-height: 2;
+    margin-bottom: 2.2rem;
+    max-width: 520px;
+  }
+
+  /* ---- FEATURE BULLETS ---- */
+  .promo-features {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    margin-bottom: 2.5rem;
+  }
+  .promo-feature {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    direction: rtl;
+  }
+  .promo-feature-icon {
+    width: 46px; height: 46px;
+    flex-shrink: 0;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.12);
+    backdrop-filter: blur(8px);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    transition: background 0.3s, transform 0.3s;
+  }
+  .promo-feature:hover .promo-feature-icon {
+    background: rgba(77,184,200,0.15);
+    border-color: rgba(77,184,200,0.4);
+    transform: scale(1.1);
+  }
+  .promo-feature-text {
+    font-family: 'Cairo', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: rgba(245,240,232,0.92);
+  }
+
+  /* ---- CTA BUTTON ---- */
+  .promo-cta-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    align-items: flex-start;
+  }
+
+  .btn-promo {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1.1rem 2.8rem;
+    background: linear-gradient(135deg, #1a6fab, #4db8c8);
+    color: var(--white);
+    text-decoration: none;
+    font-family: 'Cairo', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    border-radius: 6px;
+    overflow: hidden;
+    transition: transform 0.35s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.35s ease;
+    box-shadow: 0 4px 24px rgba(77,184,200,0.35), 0 0 0 0 rgba(77,184,200,0.4);
+    cursor: pointer;
+    border: none;
+  }
+  /* Animated shine sweep on hover */
+  .btn-promo::before {
+    content: '';
+    position: absolute;
+    top: 0; right: -100%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(to left, transparent, rgba(255,255,255,0.22), transparent);
+    transform: skewX(-20deg);
+    transition: right 0.5s ease;
+  }
+  .btn-promo:hover::before { right: 150%; }
+  .btn-promo:hover {
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 12px 40px rgba(77,184,200,0.55), 0 0 0 3px rgba(77,184,200,0.2);
+  }
+  .btn-promo:active {
+    transform: translateY(-1px) scale(1.01);
+  }
+  .btn-promo-arrow {
+    font-size: 1.2rem;
+    transition: transform 0.3s;
+  }
+  .btn-promo:hover .btn-promo-arrow { transform: translateX(-4px); }
+
+  .promo-hashtags {
+    font-family: 'Cairo', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: rgba(77,184,200,0.55);
+    line-height: 1.9;
+    direction: rtl;
+  }
+  .promo-hashtags span {
+    margin-left: 0.6rem;
+    transition: color 0.3s;
+    cursor: default;
+  }
+  .promo-hashtags span:hover { color: var(--aqua); }
+
+  /* ---- RIGHT GLASS CARD ---- */
+  .promo-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.14);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border-radius: 20px;
+    padding: 2.5rem 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+  /* Glowing top-right corner accent */
+  .promo-card::before {
+    content: '';
+    position: absolute;
+    top: -40px; left: -40px;
+    width: 160px; height: 160px;
+    background: radial-gradient(circle, rgba(77,184,200,0.2) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .promo-card::after {
+    content: '';
+    position: absolute;
+    bottom: -40px; right: -40px;
+    width: 120px; height: 120px;
+    background: radial-gradient(circle, rgba(232,200,138,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .promo-card-label {
+    font-family: 'Cairo', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--aqua);
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .promo-card-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to left, rgba(77,184,200,0.3), transparent);
+  }
+
+  .promo-card-title {
+    font-family: 'Cairo', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: var(--white);
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+  }
+
+  .promo-card-sub {
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 300;
+    color: rgba(245,240,232,0.6);
+    line-height: 1.9;
+    margin-bottom: 1.8rem;
+  }
+
+  /* Season badges */
+  .promo-seasons {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 1.8rem;
+    flex-wrap: wrap;
+  }
+  .season-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.45rem 1rem;
+    border-radius: 50px;
+    font-family: 'Cairo', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 700;
+    border: 1px solid;
+  }
+  .season-summer {
+    background: rgba(232,200,138,0.1);
+    border-color: rgba(232,200,138,0.3);
+    color: var(--warm-gold);
+  }
+  .season-winter {
+    background: rgba(77,184,200,0.1);
+    border-color: rgba(77,184,200,0.3);
+    color: var(--aqua);
+  }
+
+  /* Rating stars row */
+  .promo-rating {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 1.5rem;
+  }
+  .promo-rating-stars {
+    color: var(--warm-gold);
+    font-size: 1rem;
+    letter-spacing: 2px;
+    direction: ltr;
+  }
+  .promo-rating-text {
+    font-family: 'Cairo', sans-serif;
+    font-size: 0.85rem;
+    color: rgba(245,240,232,0.5);
+    font-weight: 600;
+  }
+
+  /* Stats mini row */
+  .promo-mini-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+  }
+  .promo-mini-stat {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 10px;
+    padding: 0.9rem 1rem;
+    text-align: center;
+    transition: border-color 0.3s;
+  }
+  .promo-mini-stat:hover { border-color: rgba(77,184,200,0.3); }
+  .promo-mini-stat-num {
+    font-family: 'Cairo', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 900;
+    color: var(--aqua);
+    display: block;
+  }
+  .promo-mini-stat-lbl {
+    font-family: 'Cairo', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: rgba(245,240,232,0.45);
+    margin-top: 0.2rem;
+    display: block;
+  }
+
+  /* ---- RESPONSIVE ---- */
+  @media (max-width: 900px) {
+    .promo-inner {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+      padding: 5rem 1.5rem;
+    }
+    .promo-bg { background-attachment: scroll; }
+    .promo-cta-wrap { align-items: center; }
+    .promo-content { text-align: center; }
+    .promo-headline em::after { display: none; }
+    .promo-feature { justify-content: center; }
+    .promo-sub { margin: 0 auto 2.2rem; }
+    .promo-tag { margin: 0 auto 1.8rem; }
+  }
+  @media (max-width: 480px) {
+    .promo-headline { font-size: 1.9rem; }
+    .promo-mini-stats { grid-template-columns: 1fr 1fr; }
+    .btn-promo { font-size: 1rem; padding: 1rem 2rem; }
+  }
+  /* ============================================================
+     END PROMOTIONAL AD SECTION
+  ============================================================ */
 
   /* ===== ABOUT ===== */
   #about {
@@ -927,7 +1381,6 @@
   <div class="hero-bg"></div>
   <div class="particles" id="particles"></div>
 
-  <!-- SEAMLESS SVG WAVE -->
   <div class="wave-container">
     <svg class="wave-svg" viewBox="0 0 2880 130" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M0,65 C240,130 480,0 720,65 C960,130 1200,0 1440,65 C1680,130 1920,0 2160,65 C2400,130 2640,0 2880,65 L2880,130 L0,130 Z" fill="#0a1628" fill-opacity="0.85"/>
@@ -941,7 +1394,7 @@
     <div class="hero-badge">🏙️ مدينة ذكية مُخططة منذ 1980 — على البحر المتوسط</div>
     <h1 class="hero-headline">
       <span class="line-gold">استثمر في المستقبل.</span><br>
-      <span class="line-aqua">عِش على البحر.</span>
+      <span class="line-aqua">عيش على البحر.</span>
     </h1>
     <p class="hero-sub">
       دمياط الجديدة — بوابة مصر المتوسطية للصناعة والتجارة والحياة الراقية.
@@ -957,6 +1410,7 @@
     <div class="scroll-line"></div>
   </div>
 </section>
+
 
 <!-- ABOUT -->
 <section id="about">
@@ -989,11 +1443,10 @@
       </div>
       <div class="about-images reveal-right">
         <div class="about-img about-img-1">
-          <img src="https://www.mobtada.com/uploads/images/2024/01/17050431876.jpg" alt="دمياط الجديدة — المدينة الساحلية المخططة" loading="lazy">
+          <img src="pics/dam.webp" alt="دمياط الجديدة — المدينة الساحلية المخططة" loading="lazy">
         </div>
         <div class="about-img about-img-2">
-          <img src="https://nasseryouthmovement.net/uploads/images/2022/09/image_750x_63232598c53e2.jpg" alt="الموقع الاستراتيجي لدمياط الجديدة" loading="lazy">
-          <div class="img-badge">🌊 بوابة مصر على المتوسط</div>
+          <img src="pics/damm.webp" alt="الموقع الاستراتيجي لدمياط الجديدة" loading="lazy">
         </div>
       </div>
     </div>
@@ -1012,7 +1465,7 @@
       <div class="video-card featured reveal">
         <div class="video-embed">
           <iframe
-            src="https://www.youtube.com/embed/OOQZJprKAHo"
+            src="https://www.youtube.com/embed/EpZIIjfFwwA?start=32"
             title="دمياط الجديدة: مدينة المستقبل على البحر المتوسط"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen loading="lazy">
@@ -1021,39 +1474,6 @@
         <div class="video-card-body">
           <div class="video-card-title">🎬 دمياط الجديدة: مدينة المستقبل على البحر المتوسط</div>
           <div class="video-card-desc">جولة ميدانية في مدينة دمياط الجديدة — من الأحياء السكنية المنظمة وشواطئ البحر المتوسط الهادئة، إلى ورش الأثاث العالمية وأرصفة ميناء دمياط التجاري الكبير. شاهد كيف تتشكل مدينة المستقبل.</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="journalists-title reveal">🎙️ خبراء يتحدثون عن <span>دمياط الجديدة</span></div>
-
-    <div class="video-grid">
-      <div class="video-card reveal">
-        <div class="video-embed">
-          <iframe
-            src="https://www.youtube.com/embed/OOQZJprKAHo"
-            title="تقرير: فرص الاستثمار في دمياط الجديدة"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen loading="lazy">
-          </iframe>
-        </div>
-        <div class="video-card-body">
-          <div class="video-card-title">📊 خبراء الاقتصاد: لماذا الآن في دمياط الجديدة؟</div>
-          <div class="video-card-desc">محللون اقتصاديون يرصدون مؤشرات النمو، ومقارنة دمياط الجديدة بالمدن الساحلية الناشئة في المنطقة، وسبب كونها الفرصة الأبرز في مرحلة التحول الاقتصادي المصري.</div>
-        </div>
-      </div>
-      <div class="video-card reveal">
-        <div class="video-embed">
-          <iframe
-            src="https://www.youtube.com/embed/OOQZJprKAHo"
-            title="صناعة الأثاث في دمياط: قوة تصديرية عالمية"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen loading="lazy">
-          </iframe>
-        </div>
-        <div class="video-card-body">
-          <div class="video-card-title">🪑 عاصمة الأثاث: صناعة تُصدّر للعالم من دمياط الجديدة</div>
-          <div class="video-card-desc">تحقيق معمق في قطاع الأثاث والخشب بدمياط الجديدة، الذي يُصدّر إلى أكثر من 60 دولة ويمثل ركيزة صناعية استثنائية تجذب الاستثمارات من الخليج وأوروبا.</div>
         </div>
       </div>
     </div>
@@ -1071,7 +1491,7 @@
     <div class="cards-grid">
 
       <div class="attr-card reveal">
-        <img src="https://zen.wego.com/cdn-cgi/image/format=auto,quality=75,width=2560/web/cms/destinations/city/eg/herodir/en/Ras%20el%20bar%20egypt_355256700.jpg" alt="شاطئ دمياط الجديدة — بيئة حياة راقية" loading="lazy">
+        <img src="pics/WhatsApp Image 2026-02-23 at 8.15.44 PM.jpeg" alt="شاطئ دمياط الجديدة — بيئة حياة راقية" loading="lazy">
         <div class="attr-overlay">
           <div class="attr-icon">🏖️</div>
           <div class="attr-name">بيئة حياة راقية</div>
@@ -1080,7 +1500,7 @@
       </div>
 
       <div class="attr-card reveal">
-        <img src="https://www.mts.gov.eg/wp-content/uploads/2022/06/1-3.jpg" alt="ميناء دمياط — بوابة التجارة الدولية" loading="lazy">
+        <img src="pics/port.jpg" alt="ميناء دمياط — بوابة التجارة الدولية" loading="lazy">
         <div class="attr-overlay">
           <div class="attr-icon">⚓</div>
           <div class="attr-name">ميناء دمياط التجاري</div>
@@ -1089,7 +1509,7 @@
       </div>
 
       <div class="attr-card reveal">
-        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&q=80" alt="صناعة الأثاث — القوة الصناعية لدمياط الجديدة" loading="lazy">
+        <img src="pics/wood.jpg" alt="صناعة الأثاث — القوة الصناعية لدمياط الجديدة" loading="lazy">
         <div class="attr-overlay">
           <div class="attr-icon">🪑</div>
           <div class="attr-name">عاصمة صناعة الأثاث</div>
@@ -1098,7 +1518,7 @@
       </div>
 
       <div class="attr-card reveal">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/2/25/%D8%B7%D8%B1%D9%8A%D9%82_%D8%A5%D9%84%D9%89_%D9%85%D8%A8%D9%86%D9%89_%D9%85%D8%AD%D8%A7%D9%81%D8%B8%D8%A9_%D8%AF%D9%85%D9%8A%D8%A7%D8%B7.JPG" alt="جامعة دمياط — المحور التعليمي" loading="lazy">
+        <img src="pics/uni.jfif" alt="جامعة دمياط — المحور التعليمي" loading="lazy">
         <div class="attr-overlay">
           <div class="attr-icon">🎓</div>
           <div class="attr-name">جامعة دمياط</div>
@@ -1107,7 +1527,7 @@
       </div>
 
       <div class="attr-card reveal">
-        <img src="https://cairoscene.com/Content/Admin/Uploads/Articles/ArticlesMainPhoto/1128927/2c3e7a05-5551-4a0b-94a0-eddde357d1f0.jpg" alt="الإمكانات العقارية في دمياط الجديدة" loading="lazy">
+        <img src="pics/WhatsApp Image 2026-02-23 at 8.15.44 PM (4).jpeg" alt="الإمكانات العقارية في دمياط الجديدة" loading="lazy">
         <div class="attr-overlay">
           <div class="attr-icon">🏗️</div>
           <div class="attr-name">نمو عقاري واعد</div>
@@ -1210,80 +1630,165 @@
     <div class="gallery-intro reveal">
       <span class="section-label">صور من الواقع</span>
       <h2 class="section-title">دمياط الجديدة <span class="accent">بالصورة</span></h2>
-      <p class="section-intro" style="margin: 1rem auto 0;">من الميناء إلى الشاطئ، ومن ورشة الأثاث إلى حرم الجامعة — دمياط الجديدة مدينة حية يصنعها أهلها كل يوم.</p>
+      <p class="section-intro" style="margin: 1rem auto 0;">دمياط الجديدة ليست مجرد مدينة، بل منصة استثمارية متكاملة، تجمع بين الصناعة، البنية التحتية، والتخطيط الذكي في مكان واحد</p>
     </div>
     <div class="gallery-grid">
       <div class="gallery-item reveal">
-        <img src="https://images.pexels.com/photos/33941717/pexels-photo-33941717.jpeg?auto=compress&cs=tinysrgb&w=600&h=400" alt="شاطئ البحر المتوسط في دمياط الجديدة" loading="lazy" decoding="async">
+        <img src="pics/WhatsApp Image 2026-02-23 at 8.15.45 PM (1).jpeg" alt="شاطئ البحر المتوسط في دمياط الجديدة" loading="lazy" decoding="async">
         <div class="overlay"><span class="overlay-icon">🔍</span></div>
       </div>
       <div class="gallery-item reveal">
-        <img src="https://images.pexels.com/photos/3840441/pexels-photo-3840441.jpeg?auto=compress&cs=tinysrgb&w=600&h=400" alt="الموقع الجغرافي — دلتا النيل والمتوسط" loading="lazy" decoding="async">
+        <img src="pics/WhatsApp Image 2026-02-23 at 8.15.43 PM (1).jpeg" alt="الموقع الجغرافي — دلتا النيل والمتوسط" loading="lazy" decoding="async">
         <div class="overlay"><span class="overlay-icon">🔍</span></div>
       </div>
       <div class="gallery-item reveal">
-        <img src="https://images.dailynewsegypt.com/2018/09/furniture.jpg" alt="صناعة الأثاث — القوة الصناعية لدمياط الجديدة" loading="lazy" decoding="async">
+        <img src="pics/1.webp" alt="صناعة الأثاث — القوة الصناعية لدمياط الجديدة" loading="lazy" decoding="async">
         <div class="overlay"><span class="overlay-icon">🔍</span></div>
       </div>
       <div class="gallery-item reveal">
-        <img src="https://images.pexels.com/photos/34712863/pexels-photo-34712863.jpeg?auto=compress&cs=tinysrgb&w=600&h=400" alt="ثروة البحر — المأكولات البحرية الطازجة" loading="lazy" decoding="async">
+        <img src="pics/WhatsApp Image 2026-02-23 at 8.15.45 PM (2).jpeg" alt="ثروة البحر — المأكولات البحرية الطازجة" loading="lazy" decoding="async">
         <div class="overlay"><span class="overlay-icon">🔍</span></div>
       </div>
       <div class="gallery-item reveal">
-        <img src="https://live.staticflickr.com/2722/4339403180_88e0940b42_z.jpg" alt="الطبيعة والهدوء على ضفاف النيل" loading="lazy" decoding="async">
+        <img src="pics/WhatsApp Image 2026-02-23 at 8.15.45 PM (3).jpeg" alt="الطبيعة والهدوء على ضفاف النيل" loading="lazy" decoding="async">
         <div class="overlay"><span class="overlay-icon">🔍</span></div>
       </div>
       <div class="gallery-item reveal">
-        <img src="https://live.staticflickr.com/4048/4338702349_99e5061dcc_b.jpg" alt="التقاء النيل بالبحر المتوسط" loading="lazy" decoding="async">
+        <img src="pics/WhatsApp Image 2026-02-23 at 8.15.44 PM (5).jpeg" alt="التقاء النيل بالبحر المتوسط" loading="lazy" decoding="async">
         <div class="overlay"><span class="overlay-icon">🔍</span></div>
       </div>
       <div class="gallery-item reveal">
-        <img src="https://images.pexels.com/photos/18606632/pexels-photo-18606632.jpeg?_gl=1*1p7jtv*_ga*MTk1MzM1NDc1OC4xNzY0MTU2Njk3*_ga_8JE65Q40S6*czE3NzE2ODYwMzUkbzMkZzEkdDE3NzE2ODcxODIkajI1JGwwJGgw" alt="التخطيط العمراني المنظم لدمياط الجديدة" loading="lazy" decoding="async">
+        <img src="pics/WhatsApp Image 2026-02-23 at 8.15.45 PM.jpeg" alt="التخطيط العمراني المنظم لدمياط الجديدة" loading="lazy" decoding="async">
         <div class="overlay"><span class="overlay-icon">🔍</span></div>
       </div>
       <div class="gallery-item reveal">
-        <img src="https://preview.redd.it/czzzpcoqxma71.jpg?width=600&format=pjpg&auto=webp&s=59d099df0a5773a4803e9c12dd589a510fd33f00" alt="ميناء دمياط — بوابة التجارة الدولية" loading="lazy" decoding="async">
+        <img src="pics/WhatsApp Image 2026-02-23 at 8.15.44 PM (2).jpeg" alt="ميناء دمياط — بوابة التجارة الدولية" loading="lazy" decoding="async">
         <div class="overlay"><span class="overlay-icon">🔍</span></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CTA -->
-<section id="cta">
-  <div class="cta-content reveal">
-    <span class="section-label">الفرصة أمامك الآن</span>
-    <h2 class="cta-title">دمياط الجديدة —<br><span>الشريك الاستراتيجي لطموحك</span></h2>
-    <p class="cta-sub">
-      سواء كنت مستثمراً صناعياً يبحث عن موقع لوجستي متميز، أو رجل أعمال يرى في ساحل المتوسط سوقاً واعدة، أو عائلة تستحق حياة راقية هادئة — دمياط الجديدة تملك إجابة لكل طموح.
-    </p>
-    <div class="cta-buttons">
-      <a href="https://www.dpa.gov.eg" class="btn-primary" target="_blank" rel="noopener noreferrer">ابدأ رحلة الاستثمار</a>
-      <a href="https://www.booking.com/city/eg/dumyat.html" class="btn-outline" target="_blank" rel="noopener noreferrer">خطّط لزيارتك</a>
+<!-- =====================================================
+     ✨ PROMOTIONAL ADVERTISEMENT SECTION
+     Position: between Hero and About
+====================================================== -->
+<section id="promo-ad" aria-label="إعلان سياحي — دمياط الجديدة">
+
+  <!-- Beach background: gradient base -->
+  <div class="promo-bg">
+    <!-- Beach photo overlay -->
+    <div class="promo-bg-img"></div>
+  </div>
+  <!-- Animated shimmer lines -->
+  <div class="promo-shimmer"></div>
+
+  <div class="promo-inner">
+
+    <!-- LEFT: Main Ad Copy -->
+    <div class="promo-content reveal-right">
+
+      <div class="promo-tag">
+        <span class="promo-tag-dot"></span>
+        إعلان
+      </div>
+
+      <h2 class="promo-headline">
+        اهرب من زحمة المدينة…<br>
+        <em>دمياط الجديدة</em> بتنادي!
+      </h2>
+
+      <p class="promo-sub">
+        لو عايز تهرب من زحمة المدينة وتستمتع بهدوء البحر والهواء النقي،
+        دمياط الجديدة هي المكان المناسب ليك!
+      </p>
+
+      <!-- Feature Bullets -->
+      <div class="promo-features">
+        <div class="promo-feature">
+          <div class="promo-feature-icon">🏖️</div>
+          <span class="promo-feature-text">شواطئ ساحرة على البحر المتوسط</span>
+        </div>
+        <div class="promo-feature">
+          <div class="promo-feature-icon">🌅</div>
+          <span class="promo-feature-text">ممشى تحفة وقت الغروب</span>
+        </div>
+        <div class="promo-feature">
+          <div class="promo-feature-icon">🏡</div>
+          <span class="promo-feature-text">أحياء راقية ومنظمة للسكن والراحة</span>
+        </div>
+        <div class="promo-feature">
+          <div class="promo-feature-icon">🛍️</div>
+          <span class="promo-feature-text">كل الخدمات متوفرة على بُعد خطوات</span>
+        </div>
+        <div class="promo-feature">
+          <div class="promo-feature-icon">📍</div>
+          <span class="promo-feature-text">موقع مميز على البحر المتوسط</span>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="promo-cta-wrap">
+        <a href="https://www.booking.com/city/eg/dumyat.html" class="btn-promo" target="_blank" rel="noopener noreferrer">
+          احجز زيارتك الآن
+          <span class="btn-promo-arrow">←</span>
+        </a>
+
+      </div>
+
     </div>
-    <div class="cta-dividers">
-      <div class="cta-divider-item">
-        <div class="cta-divider-num">1980</div>
-        <div class="cta-divider-label">تأسيس المدينة المخططة</div>
+
+    <!-- RIGHT: Glassmorphism Info Card -->
+    <div class="promo-card reveal-left">
+
+      <div class="promo-card-label">وجهتك المثالية </div>
+
+      <div class="promo-card-title">
+        خلي رحلتك الجاية<br>في دمياط الجديدة…
       </div>
-      <div class="cta-divider-sep"></div>
-      <div class="cta-divider-item">
-        <div class="cta-divider-num">+7,000</div>
-        <div class="cta-divider-label">منشأة صناعية وحرفية</div>
+
+      <div class="promo-card-sub">
+        واستمتع بأجمل أجواء صيف وشتا 💙<br>
+        هواء نقي، بحر صافي، وحياة هادئة تستحقها.
       </div>
-      <div class="cta-divider-sep"></div>
-      <div class="cta-divider-item">
-        <div class="cta-divider-num">+60</div>
-        <div class="cta-divider-label">دولة وجهة للصادرات</div>
+
+      <!-- Season badges -->
+      <div class="promo-seasons">
+        <span class="season-badge season-summer">☀️ صيف رائع</span>
+        <span class="season-badge season-winter">❄️ شتاء دافئ</span>
       </div>
-      <div class="cta-divider-sep"></div>
-      <div class="cta-divider-item">
-        <div class="cta-divider-num">#1</div>
-        <div class="cta-divider-label">عاصمة الأثاث في مصر</div>
+
+      <!-- Rating -->
+      <div class="promo-rating">
+        <div class="promo-rating-stars">★★★★★</div>
+        <span class="promo-rating-text">تقييم الزوار: 4.9 / 5</span>
       </div>
+
+      <!-- Mini Stats -->
+      <div class="promo-mini-stats">
+        <div class="promo-mini-stat">
+          <span class="promo-mini-stat-num">320</span>
+          <span class="promo-mini-stat-lbl">يوم مشمس في السنة</span>
+        </div>
+        <div class="promo-mini-stat">
+          <span class="promo-mini-stat-num">2</span>
+          <span class="promo-mini-stat-lbl">بحران في مدينة واحدة</span>
+        </div>
+        <div class="promo-mini-stat">
+          <span class="promo-mini-stat-num">1980</span>
+          <span class="promo-mini-stat-lbl">مدينة مُخططة منذ</span>
+        </div>
+        <div class="promo-mini-stat">
+          <span class="promo-mini-stat-num">∞</span>
+          <span class="promo-mini-stat-lbl">ذكريات تنتظرك</span>
+        </div>
+      </div>
+
     </div>
+
   </div>
 </section>
+<!-- END PROMOTIONAL AD SECTION -->
 
 <!-- FOOTER -->
 <footer>
@@ -1301,38 +1806,14 @@
         </div>
       </div>
       <div class="footer-col">
-        <h4>تواصل معنا</h4>
-        <div class="contact-item">
-          <span class="icon">📍</span>
-          <span>دمياط الجديدة، محافظة دمياط، مصر</span>
-        </div>
-        <div class="contact-item">
-          <span class="icon">📞</span>
-          <span>057 — هيئة الاستثمار بدمياط</span>
-        </div>
-        <div class="contact-item">
-          <span class="icon">✉️</span>
-          <span>invest@newdamietta.gov.eg</span>
-        </div>
-        <div class="contact-item">
-          <span class="icon">🌐</span>
-          <span>newdamietta.gov.eg</span>
-        </div>
-      </div>
-      <div class="footer-col">
         <h4>استكشف</h4>
         <ul>
           <li><a href="#about">رؤية المدينة</a></li>
           <li><a href="#attractions">محاور التميز</a></li>
           <li><a href="#gallery">معرض الصور</a></li>
           <li><a href="#videos">فيديوهات الاستثمار</a></li>
-          <li><a href="#testimonials">قصص النجاح</a></li>
         </ul>
       </div>
-    </div>
-    <div class="footer-bottom">
-      <p>© 2025 هيئة الاستثمار والتنمية — دمياط الجديدة. جميع الحقوق محفوظة.</p>
-      <p>صُنع بـ ❤️ لأجل <a href="#hero">دمياط الجديدة</a> — عاصمة مصر المتوسطية الناشئة</p>
     </div>
   </div>
 </footer>
